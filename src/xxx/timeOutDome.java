@@ -7,7 +7,6 @@ import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
 import java.util.*;
 
-
 /**
  * @author: hh
  * @create: 2019/4/26 15:40
@@ -19,12 +18,23 @@ public class timeOutDome {
 
     @Test
     public void strongRef(){
+        Map<Product,Integer> map1 = new HashMap<>();
+        map1.put(product,111);
+        product=null;
+        System.gc();
+        map1.keySet().forEach(System.out::println);
+    }
+
+    @Test
+    public void strongRef1(){
         Map<Product,Integer> map = new HashMap<>();
-        map.put(product,111);
+        map.put(product,222);
         product=null;
         System.gc();
         map.keySet().forEach(System.out::println);
     }
+
+
 
     @Test
     public void weakRef_1(){
