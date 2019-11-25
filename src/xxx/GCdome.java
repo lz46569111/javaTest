@@ -17,6 +17,8 @@ public class GCdome {
 
     private static final int _1m= 1024 * 1024;
 
+
+
     public static void testAllocation(){
         byte[] allocationl,allocation2,allocation3,allocation4;
         allocationl=new byte[2*_1m];
